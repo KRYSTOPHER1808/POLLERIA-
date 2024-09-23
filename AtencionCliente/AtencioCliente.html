@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atención</title>
+    <link rel="stylesheet" href="stylesAtencion.css"> 
+</head>
+<body>
+    <div class="container">
+        <h2>ATENCIÓN</h2>
+        <div class="notification">
+            <p>pedido - mesa 5 (recoger)</p>
+            <button>Hecho</button>
+        </div>
+        <p>ID_Mesero: xxxxxxxx</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID_AC</th>
+                    <th>Num_mesa</th>
+                    <th>Estado</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2548626</td>
+                    <td>8</td>
+                    <td>Nuevo</td>
+                    <td>
+                        <button>Editar</button>
+                        <button>Pagar</button>
+                        <button>Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="new-attention" id="openModal">NUEVA ATENCIÓN</button>
+    </div>
+
+    <!-- Ventana modal -->
+    <div class="modal" id="myModal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button" id="closeModal">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        // Obtén la modal
+        var modal = document.getElementById("myModal");
+        var modalBody = document.getElementById("modalBody");
+
+        // Botón que abre la modal
+        var btn = document.getElementById("openModal");
+
+        // Botón que cierra la modal
+        var span = document.getElementById("closeModal");
+
+        // Cuando el usuario hace clic en el botón, abre la modal y carga el HTML
+        btn.onclick = function() {
+            fetch('NuevaAtencion.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    modalBody.innerHTML = data; // Inserta el contenido HTML en la modal
+                    modal.style.display = "block"; // Muestra la modal
+                })
+                .catch(error => console.error('Error al cargar el archivo:', error));
+        }
+
+        // Cuando el usuario hace clic en <span> (x), cierra la modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Cuando el usuario hace clic en cualquier lugar fuera de la modal, la cierra
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
