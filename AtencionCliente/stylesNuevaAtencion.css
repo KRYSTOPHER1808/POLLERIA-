@@ -1,102 +1,148 @@
 /* Estilo del contenedor principal */
+/* Estilo para la modal */
+.modal {
+  display: none; /* Oculta la modal por defecto */
+  position: fixed; /* Queda fija en la pantalla */
+  z-index: 1000; /* Por encima de otros elementos */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Alto completo */
+  overflow: auto; /* Habilita el scroll si es necesario */
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad */
+}
+
+/* Contenido de la modal */
+.modal-content {
+  background-color: #faf3e0; /* Color de fondo */
+  margin: 15% auto; /* Margen automático para centrar */
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 90%; /* Ancho de la modal */
+  max-width: 600px; /* Ancho máximo */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Botón para cerrar la modal */
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 body {
-    margin: 0; /* Elimina márgenes predeterminados */
-    font-family: 'Arial', sans-serif; /* Fuente general */
-    background-color: #F0F0F0; /* Fondo suave para toda la página */
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #f0f0f0;
 }
 
-.container {
-    background-color: #FFFFFF; /* Fondo blanco para el contenedor */
-    padding: 40px; /* Espacio interno */
-    width: 90%; /* Ajusta el ancho al 90% del viewport */
-    max-width: 1200px; /* Ancho máximo para grandes pantallas */
-    margin: 20px auto; /* Centra el contenedor horizontalmente */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    box-sizing: border-box; /* Asegura que el padding no rompa el diseño */
-    min-height: calc(100vh - 60px); /* Resta el espacio del encabezado y el pie de página */
-    display: flex; /* Flexbox para centrar contenido */
-    flex-direction: column; /* Coloca elementos en columna */
-    justify-content: center; /* Centra el contenido verticalmente */
+h2 {
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
 }
 
-/* Notificación del pedido */
-.notification {
-    background-color: #E8F5E9; /* Verde suave */
-    border: 1px solid #A5D6A7; /* Bordes más oscuros */
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px; /* Bordes redondeados */
-    color: #2E7D32; /* Verde oscuro para el texto */
+/* Estilo para el grupo de formularios */
+.form-group {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #faf3e0; /* Fondo similar al modal */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
-/* Estilos para la tabla */
+/* Estilo para las etiquetas y entradas */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box; /* Para incluir padding en el tamaño total */
+}
+
+/* Estilo para la tabla */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
 }
 
-th, td {
-    border: 1px solid #ccc;
-    padding: 12px;
-    text-align: left;
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
 }
 
 th {
-    background-color: #2196F3; /* Azul fuerte */
-    color: white; /* Texto blanco */
-    font-weight: bold;
+  background-color: #2196f3; /* Azul fuerte */
+  color: white;
+  font-weight: bold;
 }
 
 tbody tr:hover {
-    background-color: #BBDEFB; /* Color azul suave al pasar el mouse */
+  background-color: #bbdefb; /* Color azul suave al pasar el mouse */
 }
 
 /* Estilo general de los botones */
 button {
-    background-color: #FF4081; /* Color llamativo */
-    border: none;
-    color: white;
-    padding: 12px 20px;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-    margin: 8px 2px;
-    cursor: pointer;
-    border-radius: 6px; /* Bordes redondeados */
-    transition: background-color 0.3s ease, transform 0.2s; /* Transiciones suaves */
+  background-color: #ff4081; /* Color llamativo */
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 8px 2px;
+  cursor: pointer;
+  border-radius: 6px; /* Bordes redondeados */
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
 button:hover {
-    background-color: #F50057; /* Cambia el color al pasar el mouse */
-    transform: translateY(-2px); /* Efecto de elevación */
+  background-color: #f50057; /* Cambia el color al pasar el mouse */
+  transform: translateY(-2px); /* Efecto de elevación */
 }
 
 /* Ajustes responsivos */
 @media (max-width: 768px) {
-    .container {
-        width: 95%; /* Se ajusta al 95% del ancho de pantallas pequeñas */
-        padding: 20px; /* Reduce el padding para pantallas más pequeñas */
-    }
+  h2 {
+    font-size: 24px;
+  }
 
-    button {
-        padding: 10px 16px; /* Ajusta el tamaño del botón en pantallas pequeñas */
-        font-size: 14px;
-    }
+  .form-group {
+    padding: 10px;
+  }
 
-    th, td {
-        padding: 10px; /* Menos padding en celdas para pantallas pequeñas */
-    }
+  button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
 }
 
 /* Asegúrate de que el contenedor ocupe toda la altura disponible */
-html, body {
-    height: 100%; /* Asegura que el HTML y el body ocupen toda la altura */
+html,
+body {
+  height: 100%;
 }
-
-
-
-
-
-
