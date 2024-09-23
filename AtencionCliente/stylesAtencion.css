@@ -97,4 +97,8 @@ html, body {
 
 
 
-
+h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
