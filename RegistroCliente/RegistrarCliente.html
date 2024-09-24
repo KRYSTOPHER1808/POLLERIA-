@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registra Cliente</title>
     <link rel="stylesheet" href="styleRegistraCliente.css"> 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
     <button class="volver">Regresar</button>
@@ -14,7 +15,7 @@
         <form action="" class="formulario_RegistraC">
             <div>
                 <h2 class="etiqueta">Nombres:</h2>
-                <input type="text" class="ingreso">
+                <input type="text" class="ingreso" id="nombresid" placeholder="ingrese el nombre">
             </div>
             <div>
                 <h2 class="etiqueta">Apellidos:</h2>
@@ -36,9 +37,17 @@
                 <h2 class="etiqueta">Carnet de Extranjería:</h2>
                 <input type="text" class="ingreso">
             </div>
-            <input type="submit" class="btnRC" value="Registrar">
+            <input type="submit" class="btnRC" value="Registrar" onclick="abrirVentanaConfirmacion()">
         </form>
     </div>
+    <div id="miModal" class="modal">
+        <div class="modal-contenido">
+            <h3>¿Confirmas tu selección?</h3>
+            <button onclick="confirmar(1)">Aceptar</button>
+            <button onclick="confirmar(0)">Cancelar</button>
+        </div>
+    </div>
+    <script src="InsertarCliente.js"></script>
 </body>
 
 </html>
