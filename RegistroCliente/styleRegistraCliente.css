@@ -8,13 +8,41 @@ body {
     align-items: center;
     height: 100vh;
 }
-
+.volver{
+    margin-top: 690px;
+    margin-left: 20px;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.volver:hover {
+    background-color: #0056b3;
+}
+/* Imagen de fondo con desenfoque */
+.fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra toda la pantalla */
+    filter: blur(5px); /* Aplica el desenfoque */
+    z-index: -1; /* Coloca la imagen detrás del contenido */
+}
 .contenedor {
-    background-color: #bad3f5;
+    position: relative; /* Mantiene el formulario sobre la imagen */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
     padding: 20px;
-    border-radius: 50px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 800px;
+    width: 500px;
+    z-index: 1; /* Asegura que el formulario esté sobre la imagen */
+    margin: 0 auto;
 }
 
 h1 {
