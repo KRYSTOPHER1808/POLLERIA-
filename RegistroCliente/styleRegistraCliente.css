@@ -17,7 +17,7 @@
     border-radius: 8px;
     width: 300px;
     text-align: center;
-    z-index: 101;
+    z-index: 10;
 }
 
 button {
